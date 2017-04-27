@@ -191,7 +191,7 @@ app.getAllPackages();
 // verificar se o navegador oferece suporte a service workers e, em caso positivo, registrar o service worker
 if  ('serviceWorker' in navigator) {
     navigator.serviceWorker
-        .register('./service-worker.js')
+        .register('/teste/service-worker.js')
         .then(function() {  
             console.log('Service Worker Registered');
         });
