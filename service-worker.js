@@ -1,7 +1,7 @@
 
 
-var cacheName = 'ProgressiveTriPointApp-v1';
-var dataCacheName = 'PackagesData-v1';
+var cacheName = 'ProgressiveTriPointApp-v10';
+var dataCacheName = 'PackagesData-v10';
 var filesToCache = [
     '/teste/index.html',
     '/teste/js/indexController.js',
