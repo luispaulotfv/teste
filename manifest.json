@@ -2,23 +2,23 @@
     "name": "SiteMobile",
     "short_name": "SiteMobile",
     "icons": [{
-        "src": "images/LogoTFVsaFinal-médio.png",
+        "src": "/teste/images/LogoTFVsaFinal-médio.png",
         "sizes": "128x128",
         "type": "image/png"
     }, {
-        "src": "images/LogoTFVsaFinal-médio.png",
+        "src": "/teste/images/LogoTFVsaFinal-médio.png",
         "sizes": "144x144",
         "type": "image/png"
     }, {
-        "src": "images/LogoTFVsaFinal-médio.png",
+        "src": "/teste/images/LogoTFVsaFinal-médio.png",
         "sizes": "152x152",
         "type": "image/png"
     }, {
-        "src": "images/LogoTFVsaFinal-médio.png",
+        "src": "/teste/images/LogoTFVsaFinal-médio.png",
         "sizes": "192x192",
         "type": "image/png"
     }, {
-        "src": "images/LogoTFVsaFinal-médio.png",
+        "src": "/teste/images/LogoTFVsaFinal-médio.png",
         "sizes": "256x256",
         "type": "image/png"
     }],
