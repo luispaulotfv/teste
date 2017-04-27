@@ -4,12 +4,12 @@ var cacheName = 'ProgressiveTriPointApp-v1';
 var dataCacheName = 'PackagesData-v1';
 var filesToCache = [
     '/',
-    '/index.html',
-    '/js/indexController.js',
-    '/css/bootstrap.min.css',
-    '/css/site.css',
-    '/images/ic_refresh_white_24px.svg',
-    '/images/LogoTFVsaFinal-médio.png'
+    '/teste/index.html',
+    '/teste/js/indexController.js',
+    '/teste/css/bootstrap.min.css',
+    '/teste/css/site.css',
+    '/teste/images/ic_refresh_white_24px.svg',
+    '/teste/images/LogoTFVsaFinal-médio.png'
 ];
 
 // install
