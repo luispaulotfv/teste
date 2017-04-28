@@ -189,10 +189,26 @@ var scrollTop = function() {
 app.getAllPackages();
 
 // verificar se o navegador oferece suporte a service workers e, em caso positivo, registrar o service worker
-if  ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator) {
     navigator.serviceWorker
         .register('/teste/service-worker.js')
-        .then(function() {  
+        .then(function() {
             console.log('Service Worker Registered');
+        }).catch(function(err) {
+            console.log('Service Worker Registration Failed: ', err);
         });
+} else if ('applicationCache' in window) {
+    var appCache = window.applicationCache;
+    appCache.addEventListener('updateready', function(e) {
+        if (appCache.status == window.applicationCache.UPDATEREADY) {
+            // Browser downloaded a new app cache. Swap it in and reload the page to get the new hotness.
+            appCache.swapCache();
+            window.location.reload();
+        }
+    }, false);
+    console.log('Using Application Cache');
+} else {
+    console.log('No support for Service Workers nor for Application Cache');
 }
+
+
