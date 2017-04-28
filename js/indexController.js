@@ -9,7 +9,8 @@ var app = {
     localPackageList: [],
     spinner: document.querySelector('.loader'),
     listContainer: document.querySelector('.packageList'),
-    detailContainer: document.querySelector('.packageDetail')
+    detailContainer: document.querySelector('.packageDetail'),
+    offlineType: document.querySelector('.offlineType')
 };
 
 // event listener's when click refresh
@@ -146,6 +147,17 @@ app.getPackageHtml = function(package) {
     return html;
 };
 
+app.showTitle = function(cacheType) {
+    var msg = "Offline mode: ";
+    if (cacheType == 'applicationCache') {
+        app.offlineType.innerHTML = msg + "Application Cache";
+    } else if (cacheType == 'serviceWorker') {
+        app.offlineType.innerHTML = msg + "Service Worker";
+    } else {
+        app.offlineType.innerHTML = "Offline disabled, no support for Service Workers nor for Application Cache";
+    }
+};
+
 // show spinner
 app.showSpinner = function() {
     app.spinner.setAttribute('hidden', false);
@@ -190,6 +202,7 @@ app.getAllPackages();
 
 // verificar se o navegador oferece suporte a service workers e, em caso positivo, registrar o service worker
 if ('serviceWorker' in navigator) {
+    app.showTitle('serviceWorker');
     navigator.serviceWorker
         .register('/teste/service-worker.js')
         .then(function() {
@@ -198,6 +211,7 @@ if ('serviceWorker' in navigator) {
             console.log('Service Worker Registration Failed: ', err);
         });
 } else if ('applicationCache' in window) {
+    app.showTitle('applicationCache');
     var appCache = window.applicationCache;
     appCache.addEventListener('updateready', function(e) {
         if (appCache.status == window.applicationCache.UPDATEREADY) {
@@ -208,6 +222,7 @@ if ('serviceWorker' in navigator) {
     }, false);
     console.log('Using Application Cache');
 } else {
+    app.showTitle('none');
     console.log('No support for Service Workers nor for Application Cache');
 }
 
