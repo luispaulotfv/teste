@@ -123,6 +123,13 @@ h5 {
     margin-right: 30px;
 }
 
+.offlineType {
+    text-align: center;
+    background-color: #3F51B5;
+    color: white;
+    padding: 10px;
+}
+
 .packageList {
     display: inline;
 }
